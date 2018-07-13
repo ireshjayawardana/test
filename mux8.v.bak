@@ -1,0 +1,15 @@
+module mux8(sel,in1,in2,out);
+input [14:0]in1;
+input [14:0]in2;
+output reg [14:0]out;
+input sel;
+
+always @(sel)
+begin
+	case (sel)
+		begin
+		0:out <=in1;
+		1:out <=in2;
+		end
+end
+endmodule

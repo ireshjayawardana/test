@@ -1,0 +1,15 @@
+module rx_con(rx_dv,wren,w_address);
+
+input rx_dv;
+output reg [15:0]w_address;
+output reg wren;
+
+initial begin
+	w_address=0;
+end
+always@(posedge rx_dv)
+begin 
+	w_address=w_address+1;
+	
+end
+endmodule 

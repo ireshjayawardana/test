@@ -1,0 +1,11 @@
+module unit(tx_dv,data,tx_done)
+output reg [7:0]data;
+output reg tx_dv;
+input tx_done;
+initial
+	data=8'b00001111;
+always @(posedge tx_done)
+	begin
+		data=8'b00101111;
+	end
+endmodule 

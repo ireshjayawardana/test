@@ -1,0 +1,23 @@
+module tx_con(tx_dv,wren,r_address,tx_done,i);
+
+output reg tx_dv=0;
+
+input tx_done;
+output reg [15:0]r_address;
+output reg wren;
+output reg i;
+
+initial
+begin
+	tx_dv=1;
+	r_address=0;
+end
+always @(posedge tx_done)
+begin 
+	tx_dv=1;
+	
+	wren=1;
+	r_address=r_address+1;
+	
+end
+endmodule 
